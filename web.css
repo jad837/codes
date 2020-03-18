@@ -1,0 +1,35 @@
+body{
+    background: #ADD8E6;
+
+}
+
+table{
+    align-self: left;
+    border-collapse: collapse;
+    border-width: 30%;
+    padding: 10px;
+    margin-left: 35%;
+
+}
+td{
+    border: solid;
+    padding: 10px;
+}
+#heading1{
+    color: #FF0000;
+    text-align: center;
+    font: italic bold ;
+
+}
+#submit{
+    margin-left: 45%;
+
+}
+#result{
+    font-size: 25px;
+    font: italic #D03090;
+}
+#discount{
+    font-size: 20px;
+    font: italic #D03090;
+}

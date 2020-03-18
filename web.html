@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="web.css">
+</head>
+<body>
+    
+    <h1 id="heading1" >KozzBy Clearance Sale</h1>
+    <table id="Sale">
+        <tr>
+            <td>Product Category</td>
+            <td>
+                <select name="ptype" id="ptype">
+                    <option value="Electronics Prodcuts">Electronics Prodcuts</option>
+                    <option value="Clothing and Apparels">Clothing and Apparels</option>
+                    <option value="Health Care Products">Health Care Products</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Product Name</td>
+            <td>
+                <input type="text" id="name" name="name" placeholder="Product Name">
+            </td>
+        </tr>
+        <tr>
+            <td>Product Price</td>
+            <td>
+                <input type="number" id="price" name="price">
+            </td>
+        </tr>
+        <tr>
+            <td>Quantity</td>
+            <td>
+                <input type="number" id="qty" name="qty" min="1" max="100">
+            </td>
+        </tr>
+        <tr>
+            <td>Total Price </td>
+            <td>
+                <input type="number" id="totalprice" name="totalprice" readonly>
+            </td>
+        </tr>
+    </table>
+    
+    <input type="submit" id="submit" name="submit" value="GET DISCOUNT" onclick="calculateTotalPrice();"> 
+    <input type="submit" id="clear" name="clear" value="CLEAR"> 
+    <div id="discount">
+        
+    </div> 
+    <div id="result">
+        
+    </div>
+       
+
+</body>
+<script type="text/javascript">
+    function calculateTotalPrice(){
+var price = document.getElementById(price);
+var qty = document.getElementById(qty);
+var totalprice = price * qty;
+document.getElementById("totalprice").value =  totalprice;
+}
+function calculateDiscount(){
+    var ptype = document.getElementById(ptype);
+    var price = document.getElementById(price);
+    var totalprice = price * qty;
+    var qty = document.getElementById(qty);
+    if (ptype == "Electronics Prodcuts"){
+        if ( totalprice <= 10000){
+            var discount = "Discount Percentage : 5%";
+            var dn= 5;
+            var sp= totalprice*dn/100;
+            document.getElementById("discount").innerText = discount;
+        }
+        else if ( totalprice >10000 && totalprice <= 20000){
+            var discount = "Discount Percentage : 10%";
+            var dn =10;
+            var sp= totalprice*dn/100;
+            document.getElementById("discount").innerText = discount;
+        }
+        else if ( totalprice > 20000){
+            var discount = "Discount Percentage : 20%";
+            var dn= 20;
+            var sp= totalprice*dn/100;
+            document.getElementById("discount").innerText = discount;
+        }
+          
+    }
+    else if (ptype == "Clothing and Apparels"){
+        if ( totalprice <= 10000){
+            var discount = "Discount Percentage : 10%";
+            var dn= 10;
+            var sp= totalprice*discount/100;
+        }
+        else if ( totalprice >10000 && totalprice <= 20000){
+            var discount = "Discount Percentage : 20%";
+            var dn =20;
+            var sp= totalprice*discount/100;
+        }
+        else if ( totalprice > 20000){
+            var discount = "Discount Percentage : 40%";
+            var dn= 40;
+            var sp= totalprice*discount/100;
+        }
+          
+    }
+    else if (ptype == "Health Care Products"){
+        if ( totalprice <= 10000){
+            var discount = "Discount Percentage : 10%";
+            var dn= 10;
+            var sp= totalprice*discount/100;
+        }
+        else if ( totalprice >10000 && totalprice <= 20000){
+            var discount = "Discount Percentage : 25%";
+            var dn =25;
+            var sp= totalprice*discount/100;
+        }
+        else if ( totalprice > 20000){
+            var discount = "Discount Percentage : 50%";
+            var dn= 50;
+            var sp= totalprice*discount/100;
+        }
+          
+    }
+}
+</script>
+</html>
