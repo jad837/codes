@@ -11,8 +11,8 @@ def merge(nums):
     res.append(nums[0])
     for i in range(1,len(nums)):
         temporal_list = res.pop()
-        print("temporal_list"+str(temporal_list))
-        print("nums[i]:"+str(nums[i]))
+        #print("temporal_list"+str(temporal_list))
+        #print("nums[i]:"+str(nums[i]))
         if temporal_list[1] < nums[i][0]:
             res.append(temporal_list)
             res.append(nums[i])

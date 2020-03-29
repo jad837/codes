@@ -3,7 +3,6 @@ def isValid(s):
     res = 0
     s=[]#stack
     for i in range(len(s)):
-        print("hi")
         if s[i]=="(" or s[i] == "{" or s[i]=="[":
             s.append(s[i])
         else:
