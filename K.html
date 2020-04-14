@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading1" >College Training Feedback Form</h1>
+    <table id="kasait">
+        <tr>
+            <td>Participant Name</td>
+            <td>
+                <input type="text" id="participantName" name="participantName" placeholder="Enter your name">
+            </td>
+        </tr>
+        <tr>
+            <td>College Name</td>
+            <td>
+                <input type="text" id="collegeName" name="collegeName">
+            </td>
+        </tr>
+        <tr>
+            <td>Participant Address</td>
+            <td>
+                <textarea id="participantAddress" name="participantAddress" rows="5" cols="20"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td>
+                <input type="radio" name="gender" value="male"> Male
+                <input type="radio" name="gender" value="female"> Female<br>
+            </td>
+        </tr>
+        <tr>
+            <td>Email ID </td>
+            <td>
+                <input type="email" id="email" name="email" >
+            </td>
+        </tr>
+        <tr>
+            <td>Mobile Number</td>
+            <td>
+                <input type="tel" id="mobileNumber" name="mobileNumber" pattern="/(7|8|9)\d{9}/" >
+            </td>
+        </tr>
+        <tr>
+            <td>Trainer’s Name</td>
+            <td>
+                <input type="text" id="trainerName" name="trainerName">
+            </td>
+        </tr>
+        <tr>
+            <td>Course Name</td>
+            <td>
+                <input type="text" id="courseName" name="courseName">
+            </td>
+        </tr>
+        <tr>
+            <td>Course Completion date</td>
+            <td>
+                <input type="text" id="dateofcompletion" name="dateofcompletion">
+            </td>
+        </tr>
+        <tr>
+            <td>Trainer’s Feedback</td>
+            <td>
+                <input type="text" id="trainerFeedback" name="trainerFeedback">
+            </td>
+        </tr>
+    </table>
+    <input type="submit" id="submit" name="submit" value="Submit Feedback" > 
+    <input type="submit" id="clear" name="clear" value="CLEAR"> 
+</body>
+</html>
