@@ -3,6 +3,7 @@
 
 from math import ceil
 t=int(input())
+result=[]
 while(t>0):
     t-=1
     n=int(input())
@@ -10,31 +11,31 @@ while(t>0):
     for i in range(n):
         rows=input()
         mat.append(rows)
+    #rows
+    m=n=len(mat)-1
+    #col
     middle = ceil(n/2)
-    print(middle)
-    print(mat)
     flag=True
     for i in range(middle):
         for j in range(middle):
-            if mat[i][j] != mat[i][middle+j] or mat[i][j] != mat[middle+i][middle+j] or mat[i][j] != mat[middle+i][j]:
-                print("coordinates")
-                print(i,j,middle+i,middle+j)
-                print(mat[i][j])
-                print(mat[i][middle+j])
-                print(mat[middle+i][middle+j])
-                print(mat[middle+i][j])
-                print(middle+j)
-                print(middle+i)                
+            if mat[i][j] != mat[i][m-j] or mat[i][j] != mat[m-i][n-j] or mat[i][j] != mat[m-i][j]:              
                 flag=False
                 break
         if flag==False:
             break
-    if flag and n%2!=0:
+    #middle row check
+    if flag and n%2==0:
         for i in range(n):
-            if mat[middle][i]!=mat[middle][n-i-1]:
+            print(mat[middle][i],mat[i][middle])
+            if mat[middle][i]!=mat[middle][n-i]:
+                flag=False
+                break
+            if mat[i][middle]!=mat[n-i][middle]:
                 flag=False
                 break
     if flag:
-        print("YES")
+        result.append("YES")
     else:
-        print("NO")
+        result.append("NO")
+for i in result:
+    print(i)
